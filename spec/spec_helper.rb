@@ -40,6 +40,8 @@ RSpec.configure do |config|
   #     --seed 1234
   config.order = "random"
 
+  # Include Factory Girl syntax to simplify calls to factories
+  config.include FactoryGirl::Syntax::Methods
 
   # database_cleaner
   config.before(:suite) do
