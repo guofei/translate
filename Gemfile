@@ -40,6 +40,9 @@ gem 'spring',        group: :development
 
 gem 'pg', group: [:production]
 
+gem 'bootstrap-sass', '~> 3.1.1'
+gem 'simple_form', '~>3.1.0.rc1'
+
 group :development, :test do
   gem 'sqlite3'
 
