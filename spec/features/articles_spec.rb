@@ -10,6 +10,6 @@ feature "Articles" do
     fill_in "Text", with: article.text
     click_button "Create Article"
 
-    expect(page).to have_content article.content
+    expect(page).to have_content article.text
   end
 end

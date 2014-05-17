@@ -1,0 +1,27 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Title:</strong>
+  <%= @article.title %>
+</p>
+
+<p>
+  <strong>Brief:</strong>
+  <%= @article.brief %>
+</p>
+
+<p>
+  <strong>Text:</strong>
+  <%= @article.text %>
+</p>
+
+<p>
+<%= simple_form_for @translation do |f| %>
+  <%= f.input :text %>
+  <%= f.button :submit %>
+<% end %>
+
+  <textarea class="form-control"></textarea>
+</p>
+<%= link_to 'Edit', edit_article_path(@article) %> |
+<%= link_to 'Back', articles_path %>
