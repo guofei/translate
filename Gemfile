@@ -51,7 +51,7 @@ group :development, :test do
 
   gem 'byebug'
 
-  gem "rspec-rails"
+  gem "rspec-rails", '~> 2.14.2'
   gem 'factory_girl_rails'
   gem 'database_cleaner'
 end
