@@ -2,7 +2,7 @@
 
 FactoryGirl.define do
   factory :article do
-    title "title"
+    title "abc"
     brief "a good article"
     text "this is a good article.hello word nihao konitiwa"
   end

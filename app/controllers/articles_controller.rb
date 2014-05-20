@@ -1,3 +1,6 @@
+require 'grit'
+require 'gollum-lib'
+
 class ArticlesController < ApplicationController
   before_action :set_article, only: [:show, :edit, :update, :destroy]
 
@@ -13,6 +16,7 @@ class ArticlesController < ApplicationController
   end
 
   def show
+    @translation = Translation.new(article_id: @article.id)
   end
 
   def create
@@ -20,6 +24,8 @@ class ArticlesController < ApplicationController
 
     respond_to do |format|
       if @article.save
+        @translation = Translation.new(article_id: @article.id, text: @article.text)
+        @translation.init_bare
         format.html { redirect_to @article, notice: 'Article was successfully created' }
       else
         format.html { render :new }

@@ -62,5 +62,6 @@ RSpec.configure do |config|
 
   config.after(:each) do
     DatabaseCleaner.clean
+    FileUtils.rm_rf(Dir["#{Rails.application.secrets.git_path}"])
   end
 end
