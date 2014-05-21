@@ -8,5 +8,6 @@ feature "Article translates" do
     visit article_path(article)
 
     click_button "Create Translation"
+    expect(page).to have_content article.text
   end
 end

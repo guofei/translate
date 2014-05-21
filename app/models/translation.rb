@@ -1,6 +1,9 @@
 class Translation
   include ActiveModel::Model
-  attr_accessor :article_id, :text
+  attr_accessor :article_id
+  attr_writer :text
+
+  validates :article_id, presence: true
 
   def init_bare
     Grit::Repo.init_bare(git_path)
@@ -8,10 +11,17 @@ class Translation
     wiki.write_page(title, :txt, @text)
   end
 
-  def lastest
+  # default to get latest data
+  def text(commit = nil)
+    wiki = Gollum::Wiki.new(git_path)
+    page = commit == nil ? wiki.page(title) : wiki.page(title, commit)
+    page.raw_data
+  end
+
+  def versions
     wiki = Gollum::Wiki.new(git_path)
     page = wiki.page(title)
-    page.raw_data
+    page.versions
   end
 
   def update_page

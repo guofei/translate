@@ -1,6 +1,3 @@
-require 'grit'
-require 'gollum-lib'
-
 class ArticlesController < ApplicationController
   before_action :set_article, only: [:show, :edit, :update, :destroy]
 
@@ -16,7 +13,6 @@ class ArticlesController < ApplicationController
   end
 
   def show
-    @translation = Translation.new(article_id: @article.id)
   end
 
   def create
