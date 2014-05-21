@@ -13,6 +13,8 @@ class ArticlesController < ApplicationController
   end
 
   def show
+    v = params[:v]
+    @translation = Translation.new(article_id: @article.id, version: v)
   end
 
   def create
