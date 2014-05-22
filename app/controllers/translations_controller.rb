@@ -1,5 +1,3 @@
-require 'gollum-lib'
-
 class TranslationsController < ApplicationController
   def create
     @translation = Translation.new(params[:translation])

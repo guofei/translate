@@ -1,33 +1,59 @@
+<% title @article.title -%>
+
+<div class='alert alert-info fade in' data-alert='alert'>
+  <h3>
+    <strong>
+      <a href="https://github.com/plataformatec/simple_form">Simple Form</a> and <a href="http://getbootstrap.com/">Bootstrap</a> sample application.
+    </strong>
+  </h3>
+  <p>Here you'll see the usage of <a href="https://github.com/plataformatec/simple_form">Simple Form</a> and the <a href="http://getbootstrap.com/">Bootstrap</a> toolkit on a Rails 4 application.</p>
+  <p>You can check the source code on <a href='https://github.com/rafaelfranca/simple_form-bootstrap'>GitHub</a>.</p>
+</div>
+
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Title:</strong>
-  <%= @article.title %>
-</p>
+<div class="row">
 
-<p>
-  <strong>Brief:</strong>
-  <%= @article.brief %>
-</p>
+  <div class="col-md-12">
+    <p>
+      <% @translation.versions.each do |v| -%>
+	<%= link_to v.authored_date, article_path(@article) + "/?v=#{v.id}" %><br />
+      <% end -%>
+    </p>
+  </div>
 
-<p>
-  <strong>Text:</strong>
-  <%= @article.text %>
-</p>
+  <div class="col-md-6">
+    <div class="panel panel-info">
+      <p>
+	<strong>Title:</strong>
+	<%= @article.title %>
+      </p>
+      <p>
+	<strong>Brief:</strong>
+	<%= @article.brief %>
+      </p>
+      <p>
+	<strong>Text:</strong>
+	<%= @article.text %>
+      </p>
+    </div>
+  </div>
 
-<p>
-  <% @translation.versions.each do |v| -%>
-    <%= link_to v.authored_date, article_path(@article) + "/?v=#{v.id}" %><br />
-  <% end -%>
-</p>
+  <div class="col-md-6">
+    <div class="panel panel-primary">
+      <p>
+	<%= simple_form_for @translation do |f| %>
+	  <%= f.input :text, label: "Translation" %>
+	  <%= f.input :article_id, as: :hidden %>
+	  <%= f.button :submit %>
+	<% end %>
+      </p>
+    </div>
+  </div>
 
-<p>
-<%= simple_form_for @translation do |f| %>
-  <%= f.input :text, label: "Translation" %>
-  <%= f.input :article_id, as: :hidden %>
-  <%= f.button :submit %>
-<% end %>
-</p>
+  <div class="col-md-12">
+    <%= link_to 'Edit', edit_article_path(@article) %> |
+    <%= link_to 'Back', articles_path %>
+  </div>
 
-<%= link_to 'Edit', edit_article_path(@article) %> |
-<%= link_to 'Back', articles_path %>
+</div>
