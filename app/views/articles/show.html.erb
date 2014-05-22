@@ -23,7 +23,7 @@
 
 <p>
 <%= simple_form_for @translation do |f| %>
-  <%= f.input :text %>
+  <%= f.input :text, label: "Translation" %>
   <%= f.input :article_id, as: :hidden %>
   <%= f.button :submit %>
 <% end %>

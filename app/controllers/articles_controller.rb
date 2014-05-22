@@ -13,8 +13,7 @@ class ArticlesController < ApplicationController
   end
 
   def show
-    v = params[:v]
-    @translation = Translation.new(article_id: @article.id, version: v)
+    @translation = Translation.new(article_id: @article.id, version: params[:v])
   end
 
   def create
