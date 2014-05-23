@@ -1,53 +1,63 @@
 <% title @article.title -%>
 
-<div class='alert alert-info fade in' data-alert='alert'>
-  <h3>
-    <strong>
-      <a href="https://github.com/plataformatec/simple_form">Simple Form</a> and <a href="http://getbootstrap.com/">Bootstrap</a> sample application.
-    </strong>
-  </h3>
-  <p>Here you'll see the usage of <a href="https://github.com/plataformatec/simple_form">Simple Form</a> and the <a href="http://getbootstrap.com/">Bootstrap</a> toolkit on a Rails 4 application.</p>
-  <p>You can check the source code on <a href='https://github.com/rafaelfranca/simple_form-bootstrap'>GitHub</a>.</p>
-</div>
-
 <p id="notice"><%= notice %></p>
+
+<div class='alert alert-info'>
+  <h3>
+    <%= @article.title -%>
+    <button class="btn btn-link" data-toggle="modal" data-target="#logModal">
+      Logs
+    </button>
+  </h3>
+
+  <p><%= @article.brief %></p>
+
+  <!-- Modal -->
+  <div class="modal fade" id="logModal" tabindex="-1" role="dialog" aria-labelledby="logModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+	<div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+          <h4 class="modal-title" id="logModalLabel">Logs</h4>
+	</div>
+	<div class="modal-body">
+	  <% @translation.versions.each do |v| -%>
+	    <%= link_to v.authored_date, article_path(@article) + "/?v=#{v.id}" %><br />
+	  <% end -%>
+	</div>
+	<div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+	</div>
+      </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+  </div><!-- /.modal -->
+</div>
 
 <div class="row">
 
-  <div class="col-md-12">
-    <p>
-      <% @translation.versions.each do |v| -%>
-	<%= link_to v.authored_date, article_path(@article) + "/?v=#{v.id}" %><br />
-      <% end -%>
-    </p>
-  </div>
-
   <div class="col-md-6">
     <div class="panel panel-info">
-      <p>
-	<strong>Title:</strong>
-	<%= @article.title %>
-      </p>
-      <p>
-	<strong>Brief:</strong>
-	<%= @article.brief %>
-      </p>
-      <p>
-	<strong>Text:</strong>
-	<%= @article.text %>
-      </p>
+      <div class="panel-heading">Origin Text</div>
+      <div class="panel-body">
+
+	<div class="origin-text">
+	  <%= simple_format @article.text %>
+	</div>
+
+      </div>
     </div>
   </div>
 
   <div class="col-md-6">
     <div class="panel panel-primary">
-      <p>
+      <div class="panel-heading">Tranlation</div>
+      <div class="panel-body">
 	<%= simple_form_for @translation do |f| %>
-	  <%= f.input :text, label: "Translation" %>
+	  <%= f.input :text, as: :text, input_html: {rows: 25}, label: false %>
 	  <%= f.input :article_id, as: :hidden %>
 	  <%= f.button :submit %>
 	<% end %>
-      </p>
+      </div>
     </div>
   </div>
 
