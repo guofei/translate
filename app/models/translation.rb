@@ -28,7 +28,7 @@ class Translation
 
   def commit
     @message ||= ""
-    @name ||= "guest"
+    @name ||= "Guest"
     @email ||= "guest@guest.com"
     { message: @message, name: @name, email: @email }
   end

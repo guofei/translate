@@ -47,14 +47,26 @@
 	</div>
       </div>
     </div>
+
     <div class="container">
+
+      <p id="notice"><%= notice %></p>
+
       <ul class="breadcrumb">
         <li><a href="/">Home</a></li>
-	<li class="active">Examples</li>
+	<li><%= yield(:navi)  -%></li>
       </ul>
 
       <%= yield %>
 
+      <hr>
+      <footer>
+	<p>
+	  &copy; .com 2014
+	</p>
+      </footer>
+
     </div>
+
   </body>
 </html>

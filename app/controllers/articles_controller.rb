@@ -22,7 +22,7 @@ class ArticlesController < ApplicationController
 
     respond_to do |format|
       if @article.save
-        @translation = Translation.new(article_id: @article.id, text: @article.text)
+        @translation = Translation.new(article_id: @article.id, text: @article.text, name: current_user.name, email: current_user.email)
         @translation.init_bare
         format.html { redirect_to @article, notice: 'Article was successfully created' }
       else
