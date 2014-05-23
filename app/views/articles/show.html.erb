@@ -12,7 +12,7 @@
 
   <p><%= @article.brief %></p>
 
-  <!-- Modal -->
+  <!-- Log Modal -->
   <div class="modal fade" id="logModal" tabindex="-1" role="dialog" aria-labelledby="logModalLabel" aria-hidden="true">
     <div class="modal-dialog">
       <div class="modal-content">
@@ -22,7 +22,8 @@
 	</div>
 	<div class="modal-body">
 	  <% @translation.versions.each do |v| -%>
-	    <%= link_to v.authored_date, article_path(@article) + "/?v=#{v.id}" %><br />
+	    <%= link_to "Tranlated by #{v.author.name}, #{v.authored_date}", article_path(@article) + "/?v=#{v.id}" %>
+	    <br />
 	  <% end -%>
 	</div>
 	<div class="modal-footer">
@@ -30,7 +31,7 @@
 	</div>
       </div><!-- /.modal-content -->
     </div><!-- /.modal-dialog -->
-  </div><!-- /.modal -->
+  </div><!-- /.log modal -->
 </div>
 
 <div class="row">

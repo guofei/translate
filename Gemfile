@@ -46,6 +46,8 @@ gem 'simple_form', '~>3.1.0.rc1'
 gem 'gollum-lib', '~> 3.0.0'
 gem 'gitlab-grit', '~> 2.6.7'
 
+gem 'devise', '~> 3.2.4'
+
 group :development, :test do
   gem 'sqlite3'
 
