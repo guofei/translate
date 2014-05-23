@@ -64,4 +64,7 @@ RSpec.configure do |config|
     DatabaseCleaner.clean
     FileUtils.rm_rf(Dir["#{Rails.application.secrets.git_path}"])
   end
+
+  # devise
+  config.include Devise::TestHelpers, type: :controller
 end

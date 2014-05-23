@@ -3,6 +3,7 @@ require 'spec_helper'
 feature "Articles" do
   scenario "create a article" do
     article = build(:article)
+    login
 
     visit new_article_path
     fill_in "Title", with: article.title
