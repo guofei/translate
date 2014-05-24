@@ -7,6 +7,10 @@
   </h3>
 
   <p><%= @article.brief %></p>
+  <p>
+    source: <%= @article.source -%>
+    target: <%= @article.target -%>
+  </p>
 
   <p>Change Logs:
     <button class="btn btn-link" data-toggle="modal" data-target="#logModal">Logs</button>

@@ -48,6 +48,8 @@ gem 'gitlab-grit', '~> 2.6.7'
 
 gem 'devise', '~> 3.2.4'
 
+gem 'language_list'
+
 group :development, :test do
   gem 'sqlite3'
 
