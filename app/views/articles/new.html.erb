@@ -1,8 +1,8 @@
 <%= simple_form_for @article do |f| %>
   <%= f.input :title %>
   <%= f.input :brief %>
-  <%= f.input :source, collection: LanguageList::COMMON_LANGUAGES %>
-  <%= f.input :target, collection: LanguageList::COMMON_LANGUAGES %>
+  <%= f.input :source, collection: (LanguageList::COMMON_LANGUAGES.collect{|x|x.name}.sort), selected: "English" %>
+  <%= f.input :target, collection: (LanguageList::COMMON_LANGUAGES.collect{|x|x.name}.sort), selected: "Chinese" %>
   <%= f.input :text %>
   <%= f.button :submit %>
 <% end %>
