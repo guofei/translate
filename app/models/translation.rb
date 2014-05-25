@@ -28,8 +28,8 @@ class Translation
 
   def commit
     @message ||= ""
-    @name ||= "Guest"
-    @email ||= "guest@guest.com"
+    @name ||= "guest"
+    @email ||= "guest@bittranslate.com"
     { message: @message, name: @name, email: @email }
   end
 
