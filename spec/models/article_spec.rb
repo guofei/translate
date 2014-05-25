@@ -17,4 +17,14 @@ describe Article do
     before { article.brief = " " }
     it { should_not be_valid }
   end
+
+  describe "when source is not present" do
+    before { article.source = " " }
+    it { should_not be_valid }
+  end
+
+  describe "when target is not present" do
+    before { article.target = " " }
+    it { should_not be_valid }
+  end
 end

@@ -5,5 +5,7 @@ FactoryGirl.define do
     title "abc"
     brief "a good article"
     text "this is a good article.hello word nihao konitiwa"
+    source "English"
+    target "Chinese"
   end
 end

@@ -6,15 +6,13 @@
     <%= @article.title -%>
   </h3>
 
-  <p><%= @article.brief %></p>
   <p>
-    source: <%= @article.source -%>
-    target: <%= @article.target -%>
+    Source Language: <%= @article.source -%>,
+    Target Language: <%= @article.target -%>.
+    <button class="btn btn-info" data-toggle="modal" data-target="#logModal">Change Log</button>
   </p>
 
-  <p>Change Logs:
-    <button class="btn btn-link" data-toggle="modal" data-target="#logModal">Logs</button>
-  </p>
+  <p><%= @article.brief %></p>
 
   <!-- Log Modal -->
   <div class="modal fade" id="logModal" tabindex="-1" role="dialog" aria-labelledby="logModalLabel" aria-hidden="true">
@@ -22,7 +20,7 @@
       <div class="modal-content">
 	<div class="modal-header">
           <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-          <h4 class="modal-title" id="logModalLabel">Logs</h4>
+          <h4 class="modal-title" id="logModalLabel">Change Log</h4>
 	</div>
 	<div class="modal-body">
 	  <% @translation.versions.each do |v| -%>
