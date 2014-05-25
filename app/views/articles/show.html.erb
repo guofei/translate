@@ -57,11 +57,7 @@
     <div class="panel panel-primary">
       <div class="panel-heading">Tranlation</div>
       <div class="panel-body">
-	<%= simple_form_for @translation do |f| %>
-	  <%= f.input :text, as: :text, input_html: {rows: 25}, label: false %>
-	  <%= f.input :article_id, as: :hidden %>
-	  <%= f.button :submit %>
-	<% end %>
+	<%= render "translations/form", locals: { translation: @translation } -%>
       </div>
     </div>
   </div>
