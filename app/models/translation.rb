@@ -7,7 +7,7 @@ class Translation
 
   def init_bare
     Grit::Repo.init_bare(git_path)
-    wiki.write_page(title, :txt, @text, commit)
+    wiki.write_page(page_name, :txt, @text, commit)
   end
 
   # default to get latest data
@@ -38,15 +38,15 @@ class Translation
   end
 
   def lastest_page
-    page = wiki.page(title)
+    wiki.page(page_name)
   end
 
   def page
-    wiki.page(title, @version)
+    wiki.page(page_name, @version)
   end
 
-  def title
-    @title ||= Article.find(@article_id).title
+  def page_name
+    @page_name ||= "#{@article_id}"
   end
 
   def git_path
