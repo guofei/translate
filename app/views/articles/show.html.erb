@@ -24,7 +24,7 @@
 	</div>
 	<div class="modal-body">
 	  <% @translation.versions.each do |v| -%>
-	    <%= link_to "Tranlated by #{v.author.name}, #{v.authored_date}", article_path(@article) + "/?v=#{v.id}" %>
+	    <%= link_to version_info(v), article_path(@article) + "/?v=#{v.id}" %>
 	    <br />
 	  <% end -%>
 	</div>

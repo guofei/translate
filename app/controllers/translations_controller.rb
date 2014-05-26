@@ -14,6 +14,5 @@ class TranslationsController < ApplicationController
 
   def client_ip
     ip = request.env["HTTP_X_FORWARDED_FOR"] || request.remote_ip
-    ip.gsub(/[0-9]+$/, "*")
   end
 end

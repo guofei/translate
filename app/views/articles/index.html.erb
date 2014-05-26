@@ -1,7 +1,11 @@
-<table>
+<% navi "Articles" -%>
+
+<table class="table table-condensed">
   <thead>
     <tr>
       <th>Title</th>
+      <th>Brief</th>
+      <th></th>
     </tr>
   </thead>
 
@@ -9,11 +13,11 @@
     <% @articles.each do |article| %>
       <tr>
         <td><%= link_to article.title, article %></td>
+        <td><%= article.brief %></td>
+        <td><%= "#{article.source} to #{article.target}" %></td>
       </tr>
     <% end %>
   </tbody>
 </table>
-
-<br />
 
 <%= link_to 'New Article', new_article_path, class: "btn btn-default" %>

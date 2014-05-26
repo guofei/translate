@@ -50,13 +50,17 @@
 
     <div class="container">
 
-      <p id="notice"><%= notice %></p>
-      <p class="alert"><%= alert %></p>
-
       <ul class="breadcrumb">
         <li><a href="/">Home</a></li>
 	<li><%= yield(:navi)  -%></li>
       </ul>
+
+      <% if notice %>
+	<p class="alert alert-info"><%= notice %></p>
+      <% end %>
+      <% if alert %>
+	<p class="alert alert-danger"><%= alert %></p>
+      <% end %>
 
       <%= yield %>
 
