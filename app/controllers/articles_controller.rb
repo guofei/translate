@@ -1,6 +1,7 @@
 class ArticlesController < ApplicationController
   before_action :set_article, only: [:show, :edit, :update, :destroy]
   before_action :authenticate_user!, only: [:new, :create, :edit, :update, :destroy]
+  before_filter :correct_user, only: [:edit, :update, :destroy]
 
   def index
     @articles = Article.all
@@ -19,6 +20,7 @@ class ArticlesController < ApplicationController
 
   def create
     @article = Article.new(article_params)
+    @article.user = current_user
 
     respond_to do |format|
       if @article.save
@@ -56,5 +58,10 @@ class ArticlesController < ApplicationController
 
   def article_params
     params.require(:article).permit(:title, :brief, :text, :source, :target)
+  end
+
+  def correct_user
+    user = @article.user
+    redirect_to(root_path) unless current_user == user
   end
 end
