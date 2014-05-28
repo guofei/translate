@@ -38,9 +38,12 @@
 
 <div class="row">
 
-  <div class="col-md-6">
+  <div class="col-md-6 origin">
     <div class="panel panel-info">
-      <div class="panel-heading">Origin Text</div>
+      <div class="panel-heading">
+	Origin Text
+	<%= link_to "Hidden", "javascript:void(0)", class: "hidden-origin pull-right" -%>
+      </div>
       <div class="panel-body">
 
 	<div class="origin-text">
@@ -51,9 +54,12 @@
     </div>
   </div>
 
-  <div class="col-md-6">
+  <div class="col-md-6 translation">
     <div class="panel panel-primary">
-      <div class="panel-heading">Tranlation</div>
+      <div class="panel-heading">
+	Tranlation
+	<%= link_to "Show Origin Text", "javascript:void(0)", class: "show-origin pull-right btn btn-default btn-xs" -%>
+      </div>
       <div class="panel-body">
 	<%= render "translations/form", locals: { translation: @translation } -%>
       </div>
