@@ -27,7 +27,7 @@ class Translation
   private
 
   def commit
-    @message ||= ""
+    @message ||= "translate"
     @name ||= "guest"
     @email ||= "guest@bittranslate.com"
     { message: @message, name: @name, email: @email }

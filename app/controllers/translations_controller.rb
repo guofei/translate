@@ -1,7 +1,7 @@
 class TranslationsController < ApplicationController
   def create
     @translation = Translation.new(params[:translation])
-    @translation.name = user_signed_in? ? current_user.name : client_ip
+    @translation.name = user_signed_in? ? current_user.name : remote_ip
     @translation.email = current_user.email if user_signed_in?
     @translation.update_page
 
@@ -12,7 +12,7 @@ class TranslationsController < ApplicationController
 
   private
 
-  def client_ip
-    ip = request.env["HTTP_X_FORWARDED_FOR"] || request.remote_ip
+  def remote_ip
+    request.remote_ip
   end
 end
