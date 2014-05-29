@@ -24,6 +24,16 @@ class Translation
     wiki.update_page(lastest_page, lastest_page.name, lastest_page.format, @text, commit)
   end
 
+  def diff
+    v = page.version
+    arr = v.diffs
+    if(arr.size > 0)
+      arr[0].diff
+    else
+      ""
+    end
+  end
+
   private
 
   def commit

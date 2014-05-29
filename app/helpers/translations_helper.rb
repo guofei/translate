@@ -8,4 +8,8 @@ module TranslationsHelper
     end
     "#{date},  translated by #{name}"
   end
+
+  def version_short(v)
+    "#{v.id[0..6]}"
+  end
 end

@@ -9,7 +9,7 @@
   <p>
     Source Language: <%= @article.source -%>,
     Target Language: <%= @article.target -%>.
-    <button class="btn btn-info" data-toggle="modal" data-target="#logModal">Change Log</button>
+    <button class="btn btn-default" data-toggle="modal" data-target="#logModal">Change Log</button>
   </p>
 
   <p><%= simple_format @article.brief %></p>
@@ -24,7 +24,8 @@
 	</div>
 	<div class="modal-body">
 	  <% @translation.versions.each do |v| -%>
-	    <%= link_to version_info(v), article_path(@article) + "/?v=#{v.id}" %>
+	    <%= link_to version_info(v), article_path(@article) + "/?v=#{version_short(v)}" %> &nbsp; | &nbsp;
+	    <%= link_to "diff", article_path(@article) + "/?v=#{version_short(v)}&diff=1" %>
 	    <br />
 	  <% end -%>
 	</div>
@@ -38,11 +39,21 @@
 
 <div class="row">
 
+  <% if params[:diff] == '1' -%>
+    <div class="col-md-12">
+      <div class="panel panel-info">
+	<div class="panel-body">
+	  <%= simple_format @translation.diff -%>
+	</div>
+      </div>
+    </div>
+  <% end -%>
+
   <div class="col-md-6 origin">
     <div class="panel panel-info">
       <div class="panel-heading">
 	Origin Text
-	<%= link_to "Hidden", "javascript:void(0)", class: "hidden-origin pull-right" -%>
+	<button type="button" class="hidden-origin pull-right btn btn-default btn-xs">Hidden Origin Text</button>
       </div>
       <div class="panel-body">
 
@@ -58,7 +69,7 @@
     <div class="panel panel-primary">
       <div class="panel-heading">
 	Tranlation
-	<%= link_to "Show Origin Text", "javascript:void(0)", class: "show-origin pull-right btn btn-default btn-xs" -%>
+	<button type="button" class="show-origin pull-right btn btn-default btn-xs">Show Origin Text</button>
       </div>
       <div class="panel-body">
 	<%= render "translations/form", locals: { translation: @translation } -%>
