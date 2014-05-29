@@ -3,6 +3,6 @@
   <%= f.input :brief %>
   <%= f.input :source, collection: (LanguageList::COMMON_LANGUAGES.collect{|x|x.name}.sort), selected: "English" %>
   <%= f.input :target, collection: (LanguageList::COMMON_LANGUAGES.collect{|x|x.name}.sort), selected: "Chinese" %>
-  <%= f.input :text, input_html: {rows: 25} %>
+  <%= f.input :text, input_html: {rows: 30} %>
   <%= f.button :submit %>
 <% end %>
