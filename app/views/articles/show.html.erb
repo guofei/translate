@@ -1,17 +1,15 @@
-<% title @article.title -%>
+<% title @article.translated_title -%>
 <% navi "Translation" -%>
 
 <div class='alert alert-info'>
-  <h3>
-    <%= @article.title -%>
-  </h3>
-
+  <h3><%= @article.title -%></h3>
+  <h4><%= @article.translated_title -%></h4>
   <p>
+    Original link: <%= @article.original_link -%><br />
     Source Language: <%= @article.source -%>,
     Target Language: <%= @article.target -%>.
     <button class="btn btn-default" data-toggle="modal" data-target="#logModal">Change Log</button>
   </p>
-
   <p><%= simple_format @article.brief %></p>
 
   <!-- Log Modal -->

@@ -17,6 +17,7 @@ feature "Articles" do
 
       visit new_article_path
       fill_in "Title", with: article.title
+      fill_in "Translated title", with: article.translated_title
       fill_in "Brief", with: article.brief
       fill_in "Text", with: article.text
       select article.source, from: "Source"

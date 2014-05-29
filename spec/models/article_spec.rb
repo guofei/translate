@@ -12,6 +12,11 @@ describe Article do
     it { should_not be_valid }
   end
 
+  describe "when translated title is not present" do
+    before { article.translated_title = " " }
+    it { should_not be_valid }
+  end
+
   describe "when text is not present" do
     before { article.text = " " }
     it { should_not be_valid }

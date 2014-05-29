@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140527153540) do
+ActiveRecord::Schema.define(version: 20140529155556) do
 
   create_table "articles", force: true do |t|
     t.string   "title"
@@ -22,6 +22,8 @@ ActiveRecord::Schema.define(version: 20140527153540) do
     t.string   "source"
     t.string   "target"
     t.integer  "user_id"
+    t.string   "translated_title"
+    t.string   "original_link"
   end
 
   add_index "articles", ["user_id"], name: "index_articles_on_user_id"
