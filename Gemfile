@@ -53,6 +53,8 @@ gem 'devise', '~> 3.2.4'
 
 gem 'language_list'
 
+gem 'social-share-button'
+
 group :development, :test do
   gem 'sqlite3'
 

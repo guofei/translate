@@ -10,7 +10,12 @@
     Target Language: <%= @article.target -%>.
     <button class="btn btn-default" data-toggle="modal" data-target="#logModal">Change Log</button>
   </p>
-  <p><%= simple_format @article.brief %></p>
+  <p>
+    <%= simple_format @article.brief %>
+  </p>
+  <p>
+    <%= social_share_button_tag(@article.title) %>
+  </p>
 
   <!-- Log Modal -->
   <div class="modal fade" id="logModal" tabindex="-1" role="dialog" aria-labelledby="logModalLabel" aria-hidden="true">
