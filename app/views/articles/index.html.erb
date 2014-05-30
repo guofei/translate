@@ -4,7 +4,7 @@
   <thead>
     <tr>
       <th>Title</th>
-      <th>Brief</th>
+      <th>Translated Title</th>
       <th></th>
     </tr>
   </thead>
@@ -13,7 +13,7 @@
     <% @articles.each do |article| %>
       <tr>
         <td><%= link_to article.title, article %></td>
-        <td><%= article.brief %></td>
+        <td><%= article.translated_title %></td>
         <td><%= "#{article.source} to #{article.target}" %></td>
       </tr>
     <% end %>
