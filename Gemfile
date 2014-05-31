@@ -55,6 +55,8 @@ gem 'language_list'
 
 gem 'social-share-button'
 
+gem 'google-analytics-turbolinks'
+
 group :development, :test do
   gem 'sqlite3'
 

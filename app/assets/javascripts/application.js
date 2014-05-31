@@ -15,7 +15,6 @@
 //= require turbolinks
 //= require_tree .
 
-// Loads all Bootstrap javascripts
 //= require bootstrap
-
 //= require social-share-button
+//= require google-analytics-turbolinks
