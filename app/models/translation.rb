@@ -44,7 +44,7 @@ class Translation
   end
 
   def wiki
-    wiki = Gollum::Wiki.new(git_path)
+    Gollum::Wiki.new(git_path)
   end
 
   def lastest_page
@@ -60,6 +60,6 @@ class Translation
   end
 
   def git_path
-    Rails.application.secrets.git_path + "/#{Time.now.year}/#{Time.now.month}/#{@article_id}.git"
+    Rails.application.secrets.git_path + "/#{@article_id}.git"
   end
 end
