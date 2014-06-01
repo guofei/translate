@@ -18,5 +18,8 @@
 # Ignore emacs tmpfiles.
 *~
 
+# Ignore Mac tmpfiles.
+.DS_Store
+
 /config/database.yml
 /config/secrets.yml

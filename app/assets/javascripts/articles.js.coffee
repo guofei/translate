@@ -15,3 +15,29 @@ $(document).on 'page:change', ->
                 $('.translation').addClass('col-md-6')
                 $('.origin').show()
                 $('.show-origin').hide()
+
+        $('#translation_text').mouseup ->
+                # textarea = $('#translation_text')[0]
+                # line = getLine(textarea)
+
+        $('#translation_text').keyup ->
+
+
+getLine = (textarea) ->
+        textarea.value.substr(0, getCaret(textarea)).split("\n").length
+
+getCaret = (el) ->
+        if el.selectionStart
+                return el.selectionStart
+        else if document.selection
+                el.focus()
+                r = document.selection.createRange()
+                if r is null
+                        return 0
+                re = el.createTextRange()
+                rc = re.duplicate()
+                re.moveToBookmark(r.getBookmark())
+                rc.setEndPoint('EndToStart', re)
+                return rc.text.length
+        else
+                return 0
