@@ -17,12 +17,32 @@ $(document).on 'page:change', ->
                 $('.show-origin').hide()
 
         $('#translation_text').mouseup ->
+                # $('.origin-text').unhighlight()
                 # textarea = $('#translation_text')[0]
-                # line = getLine(textarea)
+                # selectedText = getSelection(textarea)
+                # if selectedText != ''
+                #         $('.origin-text').highlight(selectedText)
 
         $('#translation_text').keyup ->
 
 
+getSelection = (textarea) ->
+        if document.selection
+                # IE version
+                textarea.focus()
+                sel = document.selection.createRange()
+                return sel.text;
+        else if textarea.selectionStart
+                # Mozilla version
+                startPos = textarea.selectionStart
+                endPos = textarea.selectionEnd
+                selectedText = textarea.value.substring(startPos, endPos)
+                return selectedText
+        else
+                ''
+
+# http://stackoverflow.com/questions/263743/caret-position-in-textarea-in-characters-from-the-start
+# http://plusblog.jp/4654/
 getLine = (textarea) ->
         textarea.value.substr(0, getCaret(textarea)).split("\n").length
 
