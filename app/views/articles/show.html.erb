@@ -59,9 +59,9 @@
 	<button type="button" class="hidden-origin pull-right btn btn-default btn-xs">Hidden Origin Text</button>
       </div>
       <div class="panel-body">
-	<div class="origin-text">
-	  <%= simple_format @article.text %>
-	</div>
+	<%= simple_form_for @article do |f| %>
+	  <%= f.input :text, input_html: {class: 'origin-text', rows: 30}, label: false %>
+	<% end %>
       </div>
     </div>
   </div>
