@@ -1,0 +1,13 @@
+en:
+  activerecord:
+    models:
+      article: Article
+    attributes:
+      article:
+        title: Title
+        translated_title: Translated Title
+        original_link: Original Link
+        brief: Brief
+        text: Text
+        source: Source
+        target: Target

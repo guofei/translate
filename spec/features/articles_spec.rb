@@ -22,7 +22,7 @@ feature "Articles" do
       fill_in "Text", with: article.text
       select article.source, from: "Source"
       select article.target, from: "Target"
-      click_button "Create Article"
+      page.find(".submit").click
 
       expect(page).to have_content article.text
     end

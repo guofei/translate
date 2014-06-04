@@ -5,7 +5,7 @@ feature "Article translates" do
     article = create_aritcle
     visit article_path(article)
 
-    click_button "Create Translation"
+    click_button I18n.t('translations.submit')
     expect(page).to have_content article.text
   end
 end

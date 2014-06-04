@@ -1,0 +1,13 @@
+zh-CN:
+  activerecord:
+    models:
+      article: 文章
+    attributes:
+      aritcle:
+        title: 标题
+        translated_title: 翻译标题
+        original_link: 原文链接
+        brief: 概要
+        text: 内容
+        source: 原文语言
+        target: 目标语言
