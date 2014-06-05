@@ -1,3 +1,6 @@
 zh-CN:
   articles:
-    submit: 发表原文
+    origin_text: 原文
+    hidden_origin: 隐藏原文
+    show_origin: 显示原文
+    translation: 翻译

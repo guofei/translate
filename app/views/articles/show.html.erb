@@ -55,8 +55,8 @@
   <div class="col-md-6 origin">
     <div class="panel panel-info">
       <div class="panel-heading">
-	Origin Text
-	<button type="button" class="hidden-origin pull-right btn btn-default btn-xs">Hidden Origin Text</button>
+	<%= t 'articles.origin_text' -%>
+	<button type="button" class="hidden-origin pull-right btn btn-default btn-xs"><%= t 'articles.hidden_origin' %></button>
       </div>
       <div class="panel-body">
 	<%= simple_form_for @article do |f| %>
@@ -69,8 +69,8 @@
   <div class="col-md-6 translation">
     <div class="panel panel-primary">
       <div class="panel-heading">
-	Tranlation
-	<button type="button" class="show-origin pull-right btn btn-default btn-xs">Show Origin Text</button>
+	<%= t 'articles.translation' %>
+	<button type="button" class="show-origin pull-right btn btn-default btn-xs"><%= t 'articles.show_origin' %></button>
       </div>
       <div class="panel-body">
 	<%= render "translations/form", locals: { translation: @translation } -%>
