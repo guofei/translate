@@ -16,12 +16,12 @@ feature "Articles" do
       login
 
       visit new_article_path
-      fill_in "Title", with: article.title
-      fill_in "Translated title", with: article.translated_title
-      fill_in "Brief", with: article.brief
-      fill_in "Text", with: article.text
-      select article.source, from: "Source"
-      select article.target, from: "Target"
+      fill_in "article_title", with: article.title
+      fill_in "article_translated_title", with: article.translated_title
+      fill_in "article_brief", with: article.brief
+      fill_in "article_text", with: article.text
+      select article.source, from: "article_source"
+      select article.target, from: "article_target"
       page.find(".submit").click
 
       expect(page).to have_content article.text

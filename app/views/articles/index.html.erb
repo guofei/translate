@@ -3,9 +3,8 @@
 <table class="table table-condensed">
   <thead>
     <tr>
-      <th>Title</th>
-      <th>Translated Title</th>
-      <th></th>
+      <th><%= Article.human_attribute_name(:title) %></th>
+      <th><%= Article.human_attribute_name(:translated_title) %></th>
     </tr>
   </thead>
 
@@ -14,10 +13,9 @@
       <tr>
         <td><%= link_to article.title, article %></td>
         <td><%= article.translated_title %></td>
-        <td><%= "#{article.source} to #{article.target}" %></td>
       </tr>
     <% end %>
   </tbody>
 </table>
 
-<%= link_to 'New Article', new_article_path, class: "btn btn-default" %>
+<%= link_to t('articles.new_article'), new_article_path, class: "btn btn-default" %>
