@@ -5,9 +5,9 @@
   <h3><%= @article.title -%></h3>
   <h4><%= @article.translated_title -%></h4>
   <p>
-    Original Link: <%= @article.original_link -%><br />
-    Source Language: <%= @article.source -%>,
-    Target Language: <%= @article.target -%>.
+    <%= t Article.human_attribute_name(:original_link) %>: <%= @article.original_link -%><br />
+    <%= t Article.human_attribute_name(:source) %>: <%= @article.source -%>,
+    <%= t Article.human_attribute_name(:target) %>: <%= @article.target -%>.
     <button class="btn btn-default" data-toggle="modal" data-target="#logModal"><%= t 'translations.changelog' -%></button>
   </p>
   <p>
