@@ -50,6 +50,7 @@ gem 'gollum-lib', '~> 3.0.0'
 gem 'gitlab-grit', '~> 2.6.7'
 
 gem 'devise', '~> 3.2.4'
+gem 'devise-i18n', '~> 0.10.3'
 gem 'rails_admin', '~> 0.6.2'
 gem 'rails_admin-i18n', '~> 0.0.9'
 
