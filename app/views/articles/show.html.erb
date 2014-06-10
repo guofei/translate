@@ -70,7 +70,7 @@
     <div class="panel panel-primary">
       <div class="panel-heading">
 	<%= t 'articles.translation' %>
-	<button type="button" class="show-origin pull-right btn btn-default btn-xs"><%= t Article.human_attribute_name(:text) %></button>
+	<button type="button" class="show-origin pull-right btn btn-default btn-xs"><%= t 'articles.show_origin' %></button>
       </div>
       <div class="panel-body">
 	<%= render "translations/form", locals: { translation: @translation } -%>

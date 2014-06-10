@@ -38,6 +38,8 @@ gem 'spring',        group: :development
 # Use debugger
 # gem 'debugger', group: [:development, :test]
 
+gem 'i18n', github: 'svenfuchs/i18n'
+
 gem 'pg', group: [:production]
 gem 'execjs'
 gem 'therubyracer'

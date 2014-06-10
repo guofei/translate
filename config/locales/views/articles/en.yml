@@ -1,5 +1,6 @@
 en:
   articles:
+    origin_text: Origin Text
     new_article: New Article
     hidden_origin: Hidden Origin Text
     show_origin: Show Origin Text
