@@ -18,6 +18,7 @@ Rails.application.routes.draw do
   #   resources :products
   resources :articles
   resources :translations, only:[:create]
+  resources :users, only:[:show]
 
   # Example resource route with options:
   #   resources :products do
