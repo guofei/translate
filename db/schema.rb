@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140609164128) do
+ActiveRecord::Schema.define(version: 20140611114100) do
 
   create_table "admin_users", force: true do |t|
     t.string   "email",                  default: "", null: false
@@ -45,6 +45,16 @@ ActiveRecord::Schema.define(version: 20140609164128) do
   end
 
   add_index "articles", ["user_id"], name: "index_articles_on_user_id"
+
+  create_table "collections", force: true do |t|
+    t.integer  "user_id"
+    t.integer  "article_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "collections", ["article_id"], name: "index_collections_on_article_id"
+  add_index "collections", ["user_id"], name: "index_collections_on_user_id"
 
   create_table "users", force: true do |t|
     t.string   "email",                  default: "", null: false
