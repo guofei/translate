@@ -10,4 +10,9 @@ describe User do
   it "return user's name" do
     expect(user.name).to eq("xyz")
   end
+
+  it "return is article collected" do
+    collection = create(:collection)
+    expect(collection.user.collected? collection.article)
+  end
 end

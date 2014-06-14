@@ -10,4 +10,8 @@ class User < ActiveRecord::Base
   def name
     email.split("@")[0]
   end
+
+  def collected?(article)
+    Collection.where(user: self, article: article).size > 0
+  end
 end

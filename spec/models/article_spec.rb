@@ -1,7 +1,7 @@
 require 'spec_helper'
 
 describe Article do
-  let(:article) { FactoryGirl.build(:article) }
+  let(:article) { build(:article) }
 
   # in rspec 3.0 use it like this: it { is_expected.not_to be_empty }
   # https://www.relishapp.com/rspec/rspec-core/v/3-0/docs/subject/one-liner-syntax

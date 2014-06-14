@@ -9,7 +9,7 @@ feature "Collections" do
       visit article_path(article)
       click_link I18n.t('collections.collect')
 
-      pending "TODO!!!!!!!!"
+      expect(page).to have_content I18n.t('collections.collected')
     end
   end
 end

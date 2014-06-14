@@ -4,7 +4,16 @@
 <div class='alert alert-info'>
   <div class="pull-right">
     <button class="btn btn-default" data-toggle="modal" data-target="#logModal"><%= t 'translations.changelog' -%></button>
-    <%= link_to t('collections.collect'), article_collections_path(@article), class: "btn btn-default", method: :post -%>
+    <% if user_signed_in? -%>
+      <% if current_user.collected? @article -%>
+	<button type="button" class="btn btn-default active"><%= t 'collections.collected' %></button>
+      <% else -%>
+	<%= link_to t('collections.collect'), article_collections_path(@article), class: "btn btn-default", method: :post -%>
+      <% end -%>
+    <% else -%>
+      <%= link_to t('collections.collect'), article_collections_path(@article), class: "btn btn-default", method: :post -%>
+    <% end -%>
+
   </div>
 
   <h3><%= @article.title -%></h3>

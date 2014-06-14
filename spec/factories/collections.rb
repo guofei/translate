@@ -2,7 +2,9 @@
 
 FactoryGirl.define do
   factory :collection do
-    user nil
-    article nil
+    after(:build) do |collection|
+      collection.user = create(:user)
+      collection.article = create(:article)
+    end
   end
 end

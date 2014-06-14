@@ -1,7 +1,8 @@
 <% title @user.name -%>
+<% navi "User" -%>
 
-<%= @user.name -%>
+<h4><%= t 'collections.collected' %></h4>
 
 <% @user.collections.each do |c| -%>
-  <%= c.article.title %>
+  <%= link_to c.article.translated_title, article_path(c.article) %><br />
 <% end %>
