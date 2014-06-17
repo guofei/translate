@@ -16,6 +16,10 @@ class Translation
     p.raw_data
   end
 
+  def version
+    page.version
+  end
+
   def versions
     lastest_page.versions
   end

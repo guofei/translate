@@ -1,0 +1,19 @@
+<% title @article.translated_title -%>
+<% navi link_to 'Translation', @article -%>
+
+<%= render "articles/info" -%>
+
+<div class="row">
+  <div class="col-md-12">
+    <div class="panel panel-info">
+      <div class="panel-heading">
+	<%= version_info(@translation.version) %>
+      </div>
+      <div class="panel-body">
+	<%= simple_format @translation.diff -%>
+      </div>
+    </div>
+  </div>
+</div>
+
+<%= link_to 'Back', @article, class: "btn btn-default" -%>

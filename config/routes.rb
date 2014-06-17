@@ -18,6 +18,7 @@ Rails.application.routes.draw do
   #   resources :products
   resources :articles do
     resources :collections
+    resources :histories
   end
   resources :translations, only:[:create]
   resources :users, only:[:show]

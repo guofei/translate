@@ -1,0 +1,34 @@
+<div class='alert alert-info'>
+  <div class="pull-right">
+    <%= render "histories/history_modal_button" -%>
+
+    <% if user_signed_in? -%>
+      <% if current_user.collected? @article -%>
+	<button type="button" class="btn btn-default active"><%= t 'collections.collected' %></button>
+      <% else -%>
+	<%= link_to t('collections.collect'), article_collections_path(@article), class: "btn btn-default", method: :post -%>
+      <% end -%>
+    <% else -%>
+      <%= link_to t('collections.collect'), article_collections_path(@article), class: "btn btn-default", method: :post -%>
+    <% end -%>
+
+  </div>
+
+  <h3><%= @article.title -%></h3>
+  <h4><%= @article.translated_title -%></h4>
+  <p>
+    <%= t Article.human_attribute_name(:original_link) %>: <%= @article.original_link -%><br />
+    <%= t Article.human_attribute_name(:source) %>: <%= @article.source -%>,
+    <%= t Article.human_attribute_name(:target) %>: <%= @article.target -%>.
+  </p>
+  <p>
+    <%= simple_format @article.brief %>
+  </p>
+
+  <p>
+    <%= social_share_button_tag(@article.title) %>
+  </p>
+
+  <!-- Log Modal -->
+  <%= render "histories/history_modal" -%>
+</div>
