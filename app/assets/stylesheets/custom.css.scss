@@ -5,4 +5,12 @@ body {
     padding-bottom: 20px;
 }
 
+.hr-point {
+    border:none;
+    border-top:dashed 1px #CCC;
+    height:1px;
+    color:#FFFFFF;
+    margin: 0 6 0 6;
+}
+
 @import "social-share-button";

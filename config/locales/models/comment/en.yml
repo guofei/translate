@@ -1,0 +1,8 @@
+en:
+  activerecord:
+    models:
+      comment: Comment
+    attributes:
+      comment:
+        title: Title
+        comment: Comment

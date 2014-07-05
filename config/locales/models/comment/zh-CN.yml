@@ -1,0 +1,8 @@
+zh-CN:
+  activerecord:
+    models:
+      comment: 评论
+    attributes:
+      comment:
+        title: 标题
+        comment: 评论内容

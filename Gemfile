@@ -62,6 +62,8 @@ gem 'social-share-button'
 
 gem 'google-analytics-turbolinks'
 
+gem 'acts_as_commentable'
+
 group :development, :test do
   gem 'sqlite3'
 

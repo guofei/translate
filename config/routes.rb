@@ -20,8 +20,9 @@ Rails.application.routes.draw do
     resources :collections
     resources :histories
   end
-  resources :translations, only:[:create]
-  resources :users, only:[:show]
+  resources :translations, only: [:create]
+  resources :users, only: [:show]
+  resources :comments, only: [:create]
 
   # Example resource route with options:
   #   resources :products do
