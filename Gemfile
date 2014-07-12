@@ -48,6 +48,9 @@ gem 'bootstrap-sass', '~> 3.1.1'
 gem 'rails_12factor', group: :production
 gem 'simple_form', '~>3.1.0.rc1'
 
+# markdown
+gem 'redcarpet'
+
 gem 'gollum-lib', '~> 3.0.0'
 gem 'gitlab-grit', '~> 2.6.7'
 

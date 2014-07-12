@@ -1,4 +1,4 @@
-en:
+zh-CN:
   simple_form:
     "yes": 'Yes'
     "no": 'No'
@@ -31,4 +31,4 @@ en:
     #     age: 'Select your age'
     hints:
       article:
-        brief: 'Markdown support'
+        brief: 支持 Markdown 格式, **<strong>粗体</strong>**、~~删除线~~

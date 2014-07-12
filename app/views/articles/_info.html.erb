@@ -22,7 +22,7 @@
     <%= t Article.human_attribute_name(:target) %>: <%= @article.target -%>.
   </p>
   <p>
-    <%= simple_format @article.brief %>
+    <%= markdown @article.brief %>
   </p>
 
   <p>
