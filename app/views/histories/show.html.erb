@@ -1,5 +1,10 @@
 <% title @article.translated_title -%>
-<% navi link_to 'Translation', @article -%>
+
+<ul class="breadcrumb">
+  <li>
+    <%= link_to 'Back', @article -%>
+  </li>
+</ul>
 
 <%= render "articles/info" -%>
 
