@@ -1,7 +1,8 @@
 en:
   articles:
-    origin_text: Origin Text
     new_article: New Article
+    origin_text: Origin Text
+    require_translate: Require Tranlsate
     hidden_origin: Hidden Origin Text
     show_origin: Show Origin Text
     translation: Translation

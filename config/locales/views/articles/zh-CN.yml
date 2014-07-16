@@ -1,7 +1,8 @@
 zh-CN:
   articles:
+    new_article: 提交原文
     origin_text: 原文
-    new_article: 求翻译
+    require_translate: 求翻译
     hidden_origin: 隐藏原文
     show_origin: 显示原文
     translation: 翻译
