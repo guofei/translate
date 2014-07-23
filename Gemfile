@@ -44,9 +44,9 @@ gem 'pg', group: [:production]
 gem 'execjs'
 gem 'therubyracer'
 
-gem 'bootstrap-sass', '~> 3.1.1'
+gem 'bootstrap-sass', '~> 3.2.0.0'
 gem 'rails_12factor', group: :production
-gem 'simple_form', '~>3.1.0.rc1'
+gem 'simple_form', '~>3.1.0.rc2'
 
 # markdown
 gem 'redcarpet'

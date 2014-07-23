@@ -57,7 +57,7 @@ class ArticlesController < ApplicationController
   end
 
   def article_params
-    params.require(:article).permit(:title, :translated_title, :original_link, :brief, :text, :source, :target)
+    params.require(:article).permit(:title, :translated_title, :original_link, :brief, :text, :source, :target, :must_login)
   end
 
   def correct_user

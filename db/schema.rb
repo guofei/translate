@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140705144808) do
+ActiveRecord::Schema.define(version: 20140723105140) do
 
   create_table "admin_users", force: true do |t|
     t.string   "email",                  default: "", null: false
@@ -42,6 +42,7 @@ ActiveRecord::Schema.define(version: 20140705144808) do
     t.integer  "user_id"
     t.string   "translated_title"
     t.string   "original_link"
+    t.boolean  "must_login"
   end
 
   add_index "articles", ["user_id"], name: "index_articles_on_user_id"

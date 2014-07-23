@@ -1,4 +1,5 @@
 en:
   translations:
     changelog: Translation Log
+    must_login_to_translate: You must login to translate it
     submit: Translate

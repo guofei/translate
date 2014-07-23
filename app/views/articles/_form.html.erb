@@ -5,6 +5,7 @@
   <%= f.input :brief, input_html: {rows: 10} %>
   <%= f.input :source, collection: (LanguageList::COMMON_LANGUAGES.collect{|x|x.name}.sort), selected: "English" %>
   <%= f.input :target, collection: (LanguageList::COMMON_LANGUAGES.collect{|x|x.name}.sort), selected: "Chinese" %>
+  <%= f.input :must_login, as: :boolean, wrapper: :vertical_radio_and_checkboxes %>
   <%= f.input :text, input_html: {rows: 30} %>
   <%= f.button :submit, t('articles.new_article'), class: "submit" %>
 <% end %>

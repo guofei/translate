@@ -1,5 +1,10 @@
 <%= simple_form_for @translation do |f| %>
   <%= f.input :text, as: :text, input_html: {rows: 30}, label: false %>
   <%= f.input :article_id, as: :hidden %>
-  <%= f.button :submit, t('translations.submit') %>
+  <% if @translation.article.must_login && !user_signed_in? %>
+    <%= f.button :submit, t('translations.submit'), disabled: true %>
+    <%= t('translations.must_login_to_translate') -%>
+  <% else -%>
+    <%= f.button :submit, t('translations.submit') %>
+  <% end -%>
 <% end %>

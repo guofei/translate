@@ -1,4 +1,5 @@
 zh-CN:
   translations:
     changelog: 翻译记录
+    must_login_to_translate: 登录后方可提交翻译内容
     submit: 更新翻译

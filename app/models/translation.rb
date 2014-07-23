@@ -10,6 +10,10 @@ class Translation
     wiki.write_page(page_name, :txt, @text, commit)
   end
 
+  def article
+    Article.find(article_id)
+  end
+
   # default to get latest data
   def text
     p = @version == nil ? lastest_page : page
@@ -60,10 +64,10 @@ class Translation
   end
 
   def page_name
-    @page_name ||= "#{@article_id}"
+    @page_name ||= "#{article_id}"
   end
 
   def git_path
-    Rails.application.secrets.git_path + "/#{@article_id}.git"
+    Rails.application.secrets.git_path + "/#{article_id}.git"
   end
 end
