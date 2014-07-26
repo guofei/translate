@@ -3,31 +3,44 @@
 <%= render "info" -%>
 
 <div class="row">
-  <div class="col-md-6 origin">
-    <div class="panel panel-info">
-      <div class="panel-heading">
-	<%= t 'articles.origin_text' -%>
-	<button type="button" class="hidden-origin pull-right btn btn-default btn-xs"><%= t 'articles.hidden_origin' %></button>
-      </div>
-      <div class="panel-body">
-	<%= simple_form_for @article do |f| %>
-	  <%= f.input :text, input_html: {class: 'origin-text', rows: 30}, label: false %>
-	<% end %>
+  <% if @article.block -%>
+    <div class="col-md-12">
+      <div class="panel panel-primary">
+	<div class="panel-heading">
+	  <%= t 'articles.translation' %>
+	</div>
+	<div class="panel-body">
+	  <%= simple_format @translation.text %>
+	</div>
       </div>
     </div>
-  </div>
+  <% else -%>
+    <div class="col-md-6 origin">
+      <div class="panel panel-info">
+	<div class="panel-heading">
+	  <%= t 'articles.origin_text' -%>
+	  <button type="button" class="hidden-origin pull-right btn btn-default btn-xs"><%= t 'articles.hidden_origin' %></button>
+	</div>
+	<div class="panel-body">
+	  <%= simple_form_for @article do |f| %>
+	    <%= f.input :text, input_html: {class: 'origin-text', rows: 30}, label: false %>
+	  <% end %>
+	</div>
+      </div>
+    </div>
 
-  <div class="col-md-6 translation">
-    <div class="panel panel-primary">
-      <div class="panel-heading">
-	<%= t 'articles.translation' %>
-	<button type="button" class="show-origin pull-right btn btn-default btn-xs"><%= t 'articles.show_origin' %></button>
-      </div>
-      <div class="panel-body">
-	<%= render "translations/form", locals: { translation: @translation } -%>
+    <div class="col-md-6 translation">
+      <div class="panel panel-primary">
+	<div class="panel-heading">
+	  <%= t 'articles.translation' %>
+	  <button type="button" class="show-origin pull-right btn btn-default btn-xs"><%= t 'articles.show_origin' %></button>
+	</div>
+	<div class="panel-body">
+	  <%= render "translations/form", locals: { translation: @translation } -%>
+	</div>
       </div>
     </div>
-  </div>
+  <% end -%>
 
   <div class="col-md-12">
     <hr />
@@ -60,6 +73,12 @@
 
   <% if current_user == @article.user -%>
     <div class="col-md-12">
+      <% unless @article.block -%>
+	<%= simple_form_for @article do |f| %>
+	  <%= f.hidden_field :block, value: 1 %>
+	  <%= f.button :submit, t('articles.block'), class: "submit" %>
+	<% end %>
+      <% end -%>
       <%= link_to 'Edit', edit_article_path(@article), class: "btn btn-default" %>
     </div>
   <% end -%>

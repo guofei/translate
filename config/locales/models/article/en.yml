@@ -12,3 +12,4 @@ en:
         source: Source
         target: Target
         must_login: Must login to translate
+        block: Block translate

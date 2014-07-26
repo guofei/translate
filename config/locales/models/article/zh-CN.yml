@@ -12,3 +12,4 @@ zh-CN:
         source: 原文语言
         target: 目标语言
         must_login: 必须登录后方可翻译
+        block: 结束翻译
