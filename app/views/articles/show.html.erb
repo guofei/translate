@@ -66,6 +66,7 @@
       <%= f.input :comment, label: false %>
       <%= f.input :commentable_type, as: :hidden, :input_html => { value: @article.class.to_s } %>
       <%= f.input :commentable_id, as: :hidden, :input_html => { value: @article.id } %>
+      <%= recaptcha_tags %>
       <%= f.button :submit %>
     <% end %>
     <br />

@@ -88,3 +88,5 @@ group :test do
   gem 'capybara'
   gem 'capybara-webkit'
 end
+
+gem 'recaptcha', '~> 0.3.6'
