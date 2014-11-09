@@ -1,6 +1,6 @@
 class CommentsController < ApplicationController
   def create
-    redirect_to(commentable) unless verify_recaptcha
+    return redirect_to(commentable) unless verify_recaptcha
     comment = Comment.new comment_params
     commentable = params[:comment][:commentable_type].constantize.find(params[:comment][:commentable_id])
     comment.commentable = commentable
