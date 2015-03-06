@@ -42,8 +42,8 @@ gem 'puma', '~> 2.9.1'
 gem 'i18n', github: 'svenfuchs/i18n'
 
 gem 'pg', group: [:production]
-gem 'execjs'
-gem 'therubyracer'
+# gem 'execjs'
+# gem 'therubyracer'
 
 gem 'bootstrap-sass', '~> 3.2.0.0'
 gem 'rails_12factor', group: :production
